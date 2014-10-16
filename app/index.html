@@ -19,10 +19,12 @@
   <div ng-view>
       <div ng-controller="CitiesCtrl as cities">
           <div>
-              <label for="cities">Select city:</label>
-              <select id="cities">
-                  <option ng-repeat="item in cities.items">{{ item.name }}</option>
-              </select>
+              <h2>Select city:</h2>
+              <ul id="cities">
+                  <li class="element" ng-repeat="item in cities.items">
+                      <a ng-click="cities.showCityInfo(item, $index)" href="#">{{ item.name }}</a>
+                  </li>
+              </ul>
           </div>
           <div>
               <button id="order-asc-btn" ng-click="cities.sortByTemperature(false)">T. ASC</button>

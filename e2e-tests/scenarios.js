@@ -7,7 +7,7 @@ describe('my app', function() {
     browser.get('index.html');
 
     it('should render a select box with a few cities', function() {
-        expect(element.all(by.css('#cities option')).count()).
+        expect(element.all(by.css('#cities .element')).count()).
             toBeGreaterThan(1);
     });
 
@@ -15,12 +15,12 @@ describe('my app', function() {
 
         element(by.css('#order-asc-btn')).click();
 
-        element.all(by.css('#cities option')).map(function(elm, index) {
+        element.all(by.css('#cities .element')).map(function(elm, index) {
             return elm.getText();
         }).then(function(array){
             element(by.css('#order-desc-btn')).click();
 
-            expect(element.all(by.css('#cities option')).map(function(elm, index) {
+            expect(element.all(by.css('#cities .element')).map(function(elm, index) {
                 return elm.getText();
             })).toEqual(array.reverse());
         });
