@@ -2,6 +2,8 @@
  * Created by mantoci on 16/10/14.
  */
 
+(function () {
+
 var DataFactory = function(){
     return {
         sort : function (nestedObj, prop, arr) {
@@ -21,3 +23,5 @@ var DataFactory = function(){
 angular
     .module('myApp.factories.DataFactory', [])
     .factory('DataFactory', DataFactory);
+
+})();
