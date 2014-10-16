@@ -17,13 +17,25 @@
 <body>
 
   <div ng-view>
-      <p>Hello Angular!</p>
+      <div ng-controller="CitiesCtrl as cities">
+          <div>
+              <label for="cities">Select city:</label>
+              <select id="cities">
+                  <option ng-repeat="item in cities.items">{{ item.name }}</option>
+              </select>
+          </div>
+          <div>
+              <button id="order-asc-btn" ng-click="cities.sortByTemperature(false)">T. ASC</button>
+              <button id="order-desc-btn" ng-click="cities.sortByTemperature(true)">T. DESC</button>
+          </div>
+      </div>
   </div>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
   -->
   <script src="bower_components/angular/angular.js"></script>
-  <script src="app.js"></script>
+  <script src="js/factories/DataFactory.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
