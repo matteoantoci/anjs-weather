@@ -2,6 +2,8 @@
  * Created by mantoci on 16/10/14.
  */
 
+"use strict";
+
 (function () {
 
 var FeedFactory = function($http) {
