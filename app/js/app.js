@@ -5,6 +5,8 @@
     var CitiesCtrl = function (DataFactory, FeedFactory) {
 
         var cnt = this;
+        var items = [];
+        var selectedCity = {};
 
         var init = function(){
             FeedFactory.getFeed.success(function(data) {
@@ -16,6 +18,10 @@
             cnt.items = reverse
                 ? DataFactory.sort("main", "temp", cnt.items).reverse()
                 : DataFactory.sort("main", "temp", cnt.items);
+        };
+
+        cnt.showCityInfo = function (item, index) {
+            cnt.selectedCity = cnt.items[index];
         };
 
         init();

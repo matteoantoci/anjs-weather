@@ -30,6 +30,28 @@
               <button id="order-asc-btn" ng-click="cities.sortByTemperature(false)">T. ASC</button>
               <button id="order-desc-btn" ng-click="cities.sortByTemperature(true)">T. DESC</button>
           </div>
+          <div>
+              <table id="main-table" ng-show="cities.selectedCity">
+                  <tr class="main-table-heading">
+                      <td>Name</td>
+                      <td>Location</td>
+                      <td>Weather</td>
+                      <td>Icon</td>
+                      <td>Temperature (range)</td>
+                      <td>Pressure</td>
+                      <td>Humidity</td>
+                  </tr>
+                  <tr class="main-table-data">
+                      <td>{{cities.selectedCity.name}}</td>
+                      <td>Lat: {{cities.selectedCity.coord.lon}} - Lon: {{cities.selectedCity.coord.lat}}</td>
+                      <td>{{cities.selectedCity.weather[0].main}}</td>
+                      <td><img ng-src="http://openweathermap.org/img/w/{{cities.selectedCity.weather[0].icon}}.png"/></td>
+                      <td>{{cities.selectedCity.main.temp}} ({{cities.selectedCity.main.temp_min}} - {{cities.selectedCity.main.temp_max}})</td>
+                      <td>{{cities.selectedCity.main.pressure}}</td>
+                      <td>{{cities.selectedCity.main.humidity}}</td>
+                  </tr>
+              </table>
+          </div>
       </div>
   </div>
 

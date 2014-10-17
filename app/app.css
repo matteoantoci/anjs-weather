@@ -1,3 +1,8 @@
 /* app css stylesheet */
 
 body{padding: 1em;}
+
+#main-table{
+    margin-top: 2em;
+    width: 100%;
+}

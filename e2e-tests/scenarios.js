@@ -11,6 +11,18 @@ describe('my app', function() {
             toBeGreaterThan(1);
     });
 
+    it('should show selected city info when clicked', function(){
+
+        element(by.css('#cities .element a')).click();
+
+        expect(element.all(by.css('.main-table-data td')).count()).
+            toEqual(7);
+
+        expect(element.all(by.css('.main-table-data td')).first().getText()).
+            toEqual('London');
+
+    });
+
     it('should order ASC and DESC order', function(){
 
         element(by.css('#order-asc-btn')).click();
